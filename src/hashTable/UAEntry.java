@@ -14,6 +14,7 @@ public class UAEntry {
 	}
 	
 	public String toString() {
-		return String.format("%-40s %-10d %-10d %-10d %n", word, termID, docCount, start);
+		int hashCode = Math.abs(word.hashCode());
+		return String.format("%-40s %-10d %-10d %-10d %n", hashCode, termID, docCount, start);
 	}
 }
