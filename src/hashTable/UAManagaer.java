@@ -4,9 +4,12 @@ import java.io.*;
 public class UAManagaer {
 	UAHashTable hashTable;
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
-
+		UAManagaer manager = new UAManagaer();
+		manager.hashTable = new UAHashTable(50);
+		manager.readFile(args[0]);
+		manager.writeFile();
 	}
 
 
@@ -27,7 +30,7 @@ public class UAManagaer {
 
 	}
 
-	public void writeFile(String file) throws IOException{
+	public void writeFile() throws IOException{
 
 		FileWriter fw = new FileWriter("Output.txt"); 
 		fw.write(hashTable.toString());;
